@@ -56,15 +56,27 @@ char *copystring(char const *str)
     return newstr;
 }
 
-___ stringcat(___, ____)
+char *stringcat(char *x, char *y)
 {
+    int lenx = strlen(x);
+    int leny = strlen(y);
+    char *new = (char *)malloc((lenx + leny + 1) * sizeof(char));
+    for (int i = 0; i < lenx; i++)
+    {
+        new[i] = x[i];
+    }
+    for (int i = 0; i < leny; i++)
+    {
+        new[lenx + i] = y[i];
+    }
+    return new;
 }
 
 int main()
 {
     char *x;
-    x = copystring("apple"); /* from the previous task */
-    char* y = stringcat(x, "tree");
+    x = copystring("Thomas"); /* from the previous task */
+    char *y = stringcat(x, " Shelby");
     printf("%s\n", y); // appletree
 
     free(x);
