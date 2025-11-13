@@ -69,6 +69,7 @@ char *stringcat(char *x, char *y)
     {
         new[lenx + i] = y[i];
     }
+    new[lenx + leny]='\0';
     return new;
 }
 
